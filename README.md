@@ -13,6 +13,7 @@ It bundles certificates and configurations for the following VPN providers:
 | Cryptostorm | `CRYPTOSTORM` |
 | FrootVPN | `FROOT` |
 | FrostVPN | `FROSTVPN` |
+| Giganews | `GIGANEWS` |
 | HideMe | `HIDEME` |
 | HideMyAss | `HIDEMYASS` |
 | IntegrityVPN | `INTEGRITYVPN` |
@@ -25,6 +26,7 @@ It bundles certificates and configurations for the following VPN providers:
 | Private Internet Access | `PIA` |
 | PrivateVPN | `PRIVATEVPN` |
 | PureVPN | `PUREVPN` |
+| RA4W VPN | `RA4W` |
 | SlickVPN | `SLICKVPN` |
 | SmartVPN | `SMARTVPN` |
 | TigerVPN | `TIGER` |
@@ -32,7 +34,8 @@ It bundles certificates and configurations for the following VPN providers:
 | UsenetServerVPN | `USENETSERVER` |
 | Windscribe | `WINDSCRIBE` |
 | VPN.ht | `VPNHT` |
-
+| VPNBook.com | `VPNBOOK` |
+| VyprVpn | `VYPRVPN` |
 When using PIA as provider it will update Transmission hourly with assigned open port. Please read the instructions below.
 
 ## Run container from Docker registry
@@ -119,7 +122,7 @@ To use this env file, use the following to run the docker image:
 $ docker run --privileged  -d \
               -v /your/storage/path/:/data \
               -v /etc/localtime:/etc/localtime:ro \
-              -env-file /your/docker/env/file \
+              --env-file /your/docker/env/file \
               -p 9091:9091 \
               haugene/transmission-openvpn-rss
 ```
