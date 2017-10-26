@@ -53,6 +53,7 @@ $ docker run --cap-add=NET_ADMIN --device=/dev/net/tun -d \
               -e "OPENVPN_CONFIG=Netherlands" \
               -e "OPENVPN_USERNAME=user" \
               -e "OPENVPN_PASSWORD=pass" \
+              -e "RSS_URL=http://.../xxxxx.rss" \
               -p 9091:9091 \
               haugene/transmission-openvpn
 ```
@@ -93,6 +94,11 @@ If TRANSMISSION_PEER_PORT_RANDOM_ON_START is enabled then it allows traffic to t
 | Variable | Function | Example |
 |----------|----------|-------|
 |`ENABLE_UFW` | Enables the firewall | `ENABLE_UFW=true`|
+
+### RSS feed configuration options
+| Variable | Function | Example |
+|----------|----------|-------|
+|`RSS_URL`|The RSS feed's URL |`RSS_URL=http://.../xxxxx.rss`|
 
 ### Transmission configuration options
 

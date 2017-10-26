@@ -14,7 +14,8 @@ RUN apt-get update \
     && add-apt-repository multiverse \
     && add-apt-repository ppa:transmissionbt/ppa \
     && apt-get update \
-    && apt-get install -y sudo transmission-cli transmission-common transmission-daemon curl rar unrar zip unzip wget \
+    && apt-get install -y sudo transmission-cli transmission-common transmission-daemon curl rar unrar zip unzip wget gcc make ruby2.3-dev \
+    && gem install transmission-rss \
     && wget -O - https://swupdate.openvpn.net/repos/repo-public.gpg|apt-key add - \
     && echo "deb http://build.openvpn.net/debian/openvpn/stable xenial main" > /etc/apt/sources.list.d/openvpn-aptrepo.list \
     && apt-get update \
@@ -30,10 +31,12 @@ RUN apt-get update \
 
 ADD openvpn/ /etc/openvpn/
 ADD transmission/ /etc/transmission/
+ADD transmission/transmission-rss.conf /etc/transmission-rss.conf
 
 ENV OPENVPN_USERNAME=**None** \
     OPENVPN_PASSWORD=**None** \
     OPENVPN_PROVIDER=**None** \
+    RSS_URL=**None** \
     TRANSMISSION_ALT_SPEED_DOWN=50 \
     TRANSMISSION_ALT_SPEED_ENABLED=false \
     TRANSMISSION_ALT_SPEED_TIME_BEGIN=540 \
